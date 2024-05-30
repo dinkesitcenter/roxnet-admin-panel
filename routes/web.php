@@ -22,3 +22,6 @@ Route::group([
 });
 
 require __DIR__.'/auth.php';
+Route::view('/','layouts/admin');
+
+require __DIR__.'/auth.php';
