@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title></title>
+        <title>{{ $title }}</title>
         <link href="{{ asset('ruangadmin/dist/img/logo/logo.png') }}" rel="shortcut icon" type="image/x-icon">
         <link href="{{ asset('ruangadmin/dist/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('ruangadmin/dist/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
@@ -14,7 +14,6 @@
         {{ ($head) ?? '' }}
             <!-- Scripts -->
             @vite(['resources/css/app.css', 'resources/js/app.js'])
-            @livewireStyles
     </head>
 
     <body id="page-top">
@@ -26,24 +25,20 @@
             <div id="content-wrapper" class="d-flex flex-column">
                 <div id="content">
                     {{-- topbar --}}
-                    <x-ruangadmin.topbar></x-ruangadmin.topbar>
-                    <livewire:layout.navigation />
+                    <livewire:layout.topbar />
 
                     {{-- container fluid --}}
                     <div class="container-fluid" id="container-wrapper">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">{{ config('app.name', 'Laravel') }}</h1>
+                            <h1 class="h3 mb-0 text-gray-800">{{ $title }}</h1>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ config('app.name', 'Laravel') }}</li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ $title }}</li>
                             </ol>
                         </div>
 
                         {{-- Main content --}}
                         {{ $slot }}
-
-                        {{-- Modal Logout --}}
-                        <x-ruangadmin.modal-logout/>
                     </div>
                 </div>
 
@@ -51,7 +46,7 @@
                 <footer class="sticky-footer bg-white mt-3">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                        <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
+                        <span>copyright &copy; {{ date("Y") }} - developed by
                             <b><a href="https://github.com/roxnet" target="_blank">Risman</a></b>
                         </span>
                         </div>
@@ -72,6 +67,5 @@
         <script src="{{ asset('ruangadmin/dist/vendor/chart.js/Chart.min.js') }}"></script>
         {{ ($script) ?? '' }}
         @stack('scripts')
-        @livewireScripts
     </body>
 </html>

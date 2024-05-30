@@ -18,10 +18,9 @@ Route::group([
     'prefix' => 'admin',
     'as' => 'admin.'
 ], function(){
-    Route::view('/dashboard', 'livewire/admin/dashboard')->name('dashboard');
+    Route::view('/dashboard', 'livewire/pages/admin/dashboard')->name('dashboard');
 });
 
-require __DIR__.'/auth.php';
-Route::view('/','layouts/admin');
+// Route::view('/','layouts/admin');
 
 require __DIR__.'/auth.php';
