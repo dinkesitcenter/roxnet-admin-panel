@@ -1,10 +1,10 @@
 <li class="nav-item">
 
-    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="collapse" data-target="#collapse{{ $name }}">
         <i class="fas fa-fw fa-{{ $icon }}"></i>
         <span>{{ $text }}</span>
     </a>
-    <div class="collapse navbar-collapse {{ strtolower($text) }}"" id="collapsibleNavbar">
+    <div class="collapse navbar-collapse {{ strtolower($text) }}"" id="collapse{{ $name }}">
         <ul class="navbar-nav">
             @foreach($submenu as $key => $value)
             <li class="nav-item{{ $value['subactive'] }}">
@@ -21,7 +21,7 @@
 <script>
     $(function(){
         if(
-        $( "#collapsibleNavbar > ul > li.nav-item" ).hasClass( "active" )==true){
+        $( "#collapse{{ $name }} > ul > li.nav-item" ).hasClass( "active" )==true){
             $('.{{ strtolower($text) }}').addClass('in show');
         };
     });

@@ -1,0 +1,11 @@
+{
+    "name": "Pak",
+    "alias": "pak",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Pak\\Providers\\PakServiceProvider"
+    ],
+    "files": []
+}

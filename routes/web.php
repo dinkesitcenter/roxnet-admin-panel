@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\Barcode\Livewire\Pages\ShowBarcode;
+use App\Livewire\Dashboard;
 
 Route::view('/', 'welcome');
 // Route::view('/', 'layouts/ruangadmin');
@@ -18,7 +20,8 @@ Route::group([
     'prefix' => 'admin',
     'as' => 'admin.'
 ], function(){
-    Route::view('/dashboard', 'livewire/pages/admin/dashboard')->name('dashboard');
+    // Route::view('/dashboard', 'livewire/pages/admin/dashboard')->name('dashboard');
+    Route::get('/dashboard', Dashboard::class)->name('dashboard');
 });
 
 // Route::view('/','layouts/admin');

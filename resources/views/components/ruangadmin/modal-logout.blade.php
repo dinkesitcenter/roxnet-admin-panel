@@ -14,9 +14,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
                 <button wire:click="logout" class="btn btn-primary">
-                    <x-dropdown-link>
-                        {{ __('Log Out') }}
-                    </x-dropdown-link>
+                   Log Out
                 </button>
                 {{-- <form wire:click="logout" method="POST">
                     @csrf

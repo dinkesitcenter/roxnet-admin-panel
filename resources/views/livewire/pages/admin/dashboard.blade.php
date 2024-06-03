@@ -1,4 +1,4 @@
-<x-ruangadmin-layout>
+<div>
     <x-slot name="title">
         Dahsboard
     </x-slot>
@@ -74,4 +74,4 @@
     <x-slot name="script">
         <script src="{{ asset('ruangadmin/dist/js/demo/chart-area-demo.js') }}"></script>
     </x-slot>
-</x-ruangadmin-layout>
+</div>

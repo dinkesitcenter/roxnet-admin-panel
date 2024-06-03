@@ -16,11 +16,59 @@
     
     <hr class="sidebar-divider mb-0">
 
+    <x-ruangadmin.nav-link 
+        text="Barcode" 
+        icon="qrcode" 
+        url="{{ route('admin.barcode') }}"
+        active="{{ request()->routeIs('admin.barcode') ? ' active' : '' }}"
+    />
+
+    <x-ruangadmin.nav-link-sub
+        text="PAK Referensi"
+        icon="users"
+        active="active"
+        name="pak-ref"
+        :submenu="[
+            [
+                'subactive'=>'',
+                'suburl'=>'',
+                'subicon'=>'th-list',
+                'subtext'=>'Pegawai'
+            ],
+            [
+                'subactive'=>'',
+                'suburl'=>'',
+                'subicon'=>'th-list',
+                'subtext'=>'Jabfung'
+            ],
+        ]"
+    />
+    <x-ruangadmin.nav-link-sub
+        text="PAK Conversi"
+        icon="th-list"
+        active="active"
+        name="pak-con"
+        :submenu="[
+            [
+                'subactive'=>'',
+                'suburl'=>'',
+                'subicon'=>'th-list',
+                'subtext'=>'Pegawai'
+            ],
+            [
+                'subactive'=>'',
+                'suburl'=>'',
+                'subicon'=>'th-list',
+                'subtext'=>'Jabfung'
+            ],
+        ]"
+    />
+
     @can('member-list')
     <x-ruangadmin.nav-link 
         text="Member" 
         icon="users" 
-        {{-- url="{{ route('admin.member') }}" --}}
+        url="{{ route('admin.member') }}"
         active="{{ request()->routeIs('admin.member') ? ' active' : '' }}"
     />
     @endcan
